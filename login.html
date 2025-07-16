@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="website.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1 class="logo">MySite</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Signup</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" id="loginEmail" required />
+        <input type="password" placeholder="Password" id="loginPassword" required />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p id="loginStatus" style="margin-top: 10px;"></p>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      if (email === "Bhavani@gmail.com" && password === "1111") {
+        document.getElementById("loginStatus").style.color = "green";
+        document.getElementById("loginStatus").textContent = "Login successful!";
+        window.location.href = "home.html";
+      } else {
+        document.getElementById("loginStatus").style.color = "red";
+        document.getElementById("loginStatus").textContent = "Invalid credentials!";
+      }
+    });
+  </script>
+</body>
+</html>
